@@ -1,0 +1,15 @@
+.home{
+    width: 25%;
+    margin: auto;
+    border: 1px solid black;
+    padding: 10px
+}
+.temperature{
+    width: 50%;
+    margin-top: 6%;
+    text-align: center;
+}
+.weatherDetails{
+    display: inline-flex;
+    width: 100%;
+}
