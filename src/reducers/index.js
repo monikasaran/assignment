@@ -1,7 +1,19 @@
+import { combineReducers } from 'redux';
 
-const rootReducer = (state = {}, action) => {
+// The default state of the app
+const initialState ={
+    weatherData : null
+}
+
+// Reducer function for the redux state changes
+const weatherReducer = (state = initialState, action) => {
     switch(action.type){
-        case "CHANGE_LOC" : 
+        case "CHANGE_LOC" :          
+            return {
+                ...state,
+                weatherData : action.weatherData
+            }
+        case "ERROR_LOC" :            
             return {
                 ...state,
                 weatherData : action.weatherData
@@ -14,5 +26,9 @@ const rootReducer = (state = {}, action) => {
     }
 }
 
+// Combine all the reducers in one
+const rootReducer = combineReducers({
+    weatherReducer
+})
 
 export default rootReducer;
