@@ -1,10 +1,5 @@
-import { combineReducers } from 'redux';
 
-let defaultState = {
-    weatherData : {}
-}
-
-const rootReducer = (state = defaultState, action) => {
+const rootReducer = (state = {}, action) => {
     switch(action.type){
         case "CHANGE_LOC" : 
             return {
@@ -13,7 +8,7 @@ const rootReducer = (state = defaultState, action) => {
             }
         default :
             return {
-                ...state
+                ...state,
             }
 
     }
